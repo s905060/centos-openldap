@@ -33,5 +33,7 @@ VOLUME ["/var/lib/ldap", "/etc/openldap/"]
 # Set the port to 389 for ldap server
 EXPOSE 389
 
+USER root
+
 # Executing ldap server
-CMD ["/usr/bin/run.sh"]
+CMD ["bash /usr/bin/run.sh"]
