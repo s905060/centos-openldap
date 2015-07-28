@@ -36,4 +36,4 @@ EXPOSE 389
 USER root
 
 # Executing ldap server
-CMD ["bash /usr/bin/run.sh"]
+CMD ["/usr/bin/run.sh"]
