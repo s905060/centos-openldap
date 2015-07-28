@@ -27,13 +27,14 @@ env SLAPD_URL ldapi:/// ldap:///
 # Adding the run file
 ADD run.sh /usr/bin/run.sh
 
+# Set file permission
+RUN chmod 755 /usr/bin/run.sh
+
 # Setup Volume (ldap datastore, ldap config)
 VOLUME ["/var/lib/ldap", "/etc/openldap/"]
 
 # Set the port to 389 for ldap server
 EXPOSE 389
-
-USER root
 
 # Executing ldap server
 CMD ["/usr/bin/run.sh"]
